@@ -1,11 +1,16 @@
-p<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Fazil Kashmiri Memorial Government Higher Secondary School Chandilora Tangmarg</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     * {
       box-sizing: border-box;
@@ -13,42 +18,57 @@ p<!DOCTYPE html>
       padding: 0;
       scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: #f9f9f9;
       color: #333;
+      overflow-x: hidden;
     }
+
+    /* HEADER */
+
     header {
       background: linear-gradient(90deg, #4caf50, #388e3c);
-      padding: 1rem 0 0.5rem;
+      padding: 1rem 15px 0.8rem;
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
+
+    .school-icon {
+      font-size: 2rem;
+      color: #ffeb3b;
+      margin-bottom: 5px;
+    }
+
     header h1 {
       font-family: 'Playfair Display', serif;
       color: #fff;
       text-align: center;
-      font-size: 1.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      padding: 0 15px;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      font-weight: 600;
     }
-    header h1 i {
-      font-size: 2rem;
-      color: #ffeb3b;
+
+    header h1 span {
+      display: block;
     }
+
     section {
       padding: 40px 20px;
     }
+
     .container {
       max-width: 1200px;
+      width: 100%;
       margin: auto;
     }
+
+    /* HERO SECTION */
+
     .hero {
       background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') center/cover no-repeat;
       color: white;
@@ -56,30 +76,39 @@ p<!DOCTYPE html>
       position: relative;
       padding: 90px 20px 60px;
     }
+
     .hero::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      inset: 0;
       background: rgba(0, 63, 125, 0.7);
       z-index: 1;
     }
+
     .hero .content {
       position: relative;
       z-index: 2;
     }
+
     .hero p {
       font-size: 1.1rem;
       max-width: 700px;
       margin: auto;
     }
+
+    /* REGISTRATION LINKS */
+
     .registration-alerts {
       margin: 20px auto 30px;
-      padding-left: 20px;
+      padding-left: 10px;
     }
+
     .registration-alerts a {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      width: fit-content;
+      max-width: 100%;
       color: red;
       font-weight: bold;
       font-size: 1rem;
@@ -87,30 +116,49 @@ p<!DOCTYPE html>
       text-decoration: none;
       animation: glow 2s infinite alternate;
     }
+
     .registration-alerts a i {
       margin-right: 8px;
       font-size: 1.5rem;
+      flex-shrink: 0;
     }
-    @keyframes glow {
-      from { text-shadow: 0 0 8px rgba(255, 0, 0, 0.5); }
-      to { text-shadow: 0 0 16px rgba(255, 0, 0, 1); }
+
+    .registration-alerts .link-text {
+      display: inline;
     }
-    .registration-alerts a .star {
+
+    .registration-alerts .star {
       color: blue;
-      font-size: 1.5rem;
-      margin-left: 10px;
+      font-size: 1.3rem;
+      margin-left: 5px;
+      display: inline-block;
       animation: blink 1s infinite;
     }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+      }
+      to {
+        text-shadow: 0 0 16px rgba(255, 0, 0, 1);
+      }
+    }
+
     @keyframes blink {
       0% { opacity: 1; }
       50% { opacity: 0; }
       100% { opacity: 1; }
     }
+
+    /* FEATURES SECTION */
+
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 25px;
+      align-items: stretch;
     }
+
     .feature {
       background: #fff;
       padding: 20px;
@@ -118,151 +166,379 @@ p<!DOCTYPE html>
       box-shadow: 0 10px 25px rgba(0,0,0,0.07);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
+      width: 100%;
     }
+
     .feature:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.1);
     }
+
     .feature h3 {
       color: #388e3c;
       margin-bottom: 10px;
+      font-size: 1.1rem;
     }
+
     .feature i {
-      font-size: 4rem;
+      font-size: 3rem;
       color: #ff9800;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
-    h2 {
+
+    /* THIRD CARD CENTRED BELOW TWO CARDS */
+
+    .feature:last-child {
+      grid-column: 1 / -1;
+      width: calc(50% - 12.5px);
+      justify-self: center;
+    }
+
+    /* LOCATION SECTION */
+
+    .location-section {
+      background-color: #f3f4f6;
+      padding: 25px 20px;
+      text-align: center;
+      margin-top: 40px;
+      border-radius: 8px;
+    }
+
+    .location-section p {
+      font-size: 1.05rem;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .location-section i {
+      color: #388e3c;
+      margin-right: 6px;
+    }
+
+    /* PRIVACY POLICY */
+
+    .privacy-section {
+      margin-top: 25px;
+      padding: 30px 20px 40px;
+      text-align: left;
+    }
+
+    .privacy-section h2 {
       color: #388e3c;
       font-size: 2rem;
       margin-bottom: 15px;
     }
-    h3 { color: #f57c00; }
-    ul { padding-left: 20px; }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 12px;
-      margin-top: 15px;
+
+    .privacy-section p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      text-align: left;
     }
+
+    .privacy-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .privacy-section li {
+      padding: 10px 0;
+      border-bottom: 1px solid #e5e5e5;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    .privacy-section li:last-child {
+      border-bottom: none;
+    }
+
+    /* FOOTER */
+
     footer {
       background: #388e3c;
       color: #fff;
       text-align: center;
-      padding: 1rem 0;
+      padding: 1rem 15px;
       font-size: 0.9rem;
+      line-height: 1.7;
     }
-    .contact-section {
-      background-color: #f3f4f6;
-      padding: 40px 20px;
-      text-align: center;
-      border-radius: 8px;
-      margin-top: 40px;
-    }
-    .contact-section h2 {
-      font-size: 2.5rem;
-      color: #388e3c;
-      margin-bottom: 20px;
-    }
-    .contact-section p {
-      font-size: 1.2rem;
-      color: #333;
-      margin-bottom: 15px;
-    }
-    .contact-section a {
-      text-decoration: none;
-      color: #ff9800;
-      font-weight: bold;
-      display: block;
-      margin-top: 15px;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-    .contact-section a:hover {
-      color: #388e3c;
-    }
+
+    /* TABLET AND MOBILE */
+
     @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 2rem;
+
+      header h1 {
+        font-size: 1.2rem;
       }
-      .registration-alerts a {
+
+      .hero {
+        padding: 65px 15px 45px;
+      }
+
+      .hero p {
         font-size: 0.95rem;
       }
+
+      .registration-alerts a {
+        font-size: 0.85rem;
+      }
+
+      .registration-alerts a i {
+        font-size: 1.2rem;
+      }
+
+      .features {
+        gap: 15px;
+      }
+
+      .feature {
+        padding: 18px 12px;
+      }
+
+      .feature h3 {
+        font-size: 0.95rem;
+      }
+
+      .feature p {
+        font-size: 0.85rem;
+      }
+
+      .feature i {
+        font-size: 2.5rem;
+      }
+
+      .feature:last-child {
+        width: calc(50% - 7.5px);
+      }
+
+      .privacy-section h2 {
+        font-size: 1.7rem;
+      }
+
+      .location-section p {
+        font-size: 0.9rem;
+      }
     }
+
+    @media (max-width: 380px) {
+
+      header h1 {
+        font-size: 1.05rem;
+      }
+
+      .features {
+        gap: 10px;
+      }
+
+      .feature {
+        padding: 15px 8px;
+      }
+
+      .feature:last-child {
+        width: calc(50% - 5px);
+      }
+
+      .feature p {
+        font-size: 0.78rem;
+      }
+    }
+
     @media (min-width: 1024px) {
+
       .hero p {
         font-size: 1.3rem;
       }
+
       .feature h3 {
         font-size: 1.4rem;
       }
+
       .feature p {
         font-size: 1.05rem;
       }
+
       .registration-alerts a {
         font-size: 1.1rem;
       }
     }
+
   </style>
 </head>
+
 <body>
 
+  <!-- HEADER -->
+
   <header>
-    <h1><i class="fas fa-school"></i> Fazil Kashmiri Memorial Government Higher Secondary School Chandilora Tangmarg</h1>
+
+    <div class="school-icon">
+      <i class="fas fa-school"></i>
+    </div>
+
+    <h1>
+      <span>Fazil Kashmiri Memorial</span>
+      <span>Government Higher Secondary School Chandilora Tangmarg</span>
+    </h1>
+
   </header>
 
+
+  <!-- HERO SECTION -->
+
   <section class="hero">
+
     <div class="content">
+
       <p>Shaping young minds with academic excellence and discipline.</p>
+
     </div>
+
   </section>
 
+
+  <!-- ONLINE REGISTRATION -->
+
   <section class="container">
+
     <div class="registration-alerts">
-      <a href="https://zfrmz.in/Y4kXfuIPloaD4ZOlm4Rn" target="_blank"><i class="fas fa-arrow-circle-right"></i>9th & 10th Online Registration 2026-27 (November) <span class="star">*</span></a>
-      <a href="https://forms.zohopublic.in/hsschandilora/form/12th2026/formperma/4oPLsJdxICaDTFBILA1qkPhe4GotkWKYoROrId7RAgQ" target="_blank"><i class="fas fa-arrow-circle-right"></i>11th Online Registration 2027 <span class="star">*</span></a>
-      <a href="https://forms.zohopublic.in/hsschandilora/form/11th2026/formperma/z5PmKb5sRwLy5cmwgjeZBwiRXGW_Kivscf9uziW1GDM" target="_blank"><i class="fas fa-arrow-circle-right"></i>12th Online Registration 2027 <span class="star">*</span></a>
+
+      <a href="https://zfrmz.in/Y4kXfuIPloaD4ZOlm4Rn" target="_blank">
+
+        <i class="fas fa-arrow-circle-right"></i>
+
+        <span class="link-text">
+          9th & 10th Online Registration 2026-27 (November)<span class="star">*</span>
+        </span>
+
+      </a>
+
+
+      <a href="https://forms.zohopublic.in/hsschandilora/form/12th2026/formperma/4oPLsJdxICaDTFBILA1qkPhe4GotkWKYoROrId7RAgQ" target="_blank">
+
+        <i class="fas fa-arrow-circle-right"></i>
+
+        <span class="link-text">
+          11th Online Registration 2027<span class="star">*</span>
+        </span>
+
+      </a>
+
+
+      <a href="https://forms.zohopublic.in/hsschandilora/form/11th2026/formperma/z5PmKb5sRwLy5cmwgjeZBwiRXGW_Kivscf9uziW1GDM" target="_blank">
+
+        <i class="fas fa-arrow-circle-right"></i>
+
+        <span class="link-text">
+          12th Online Registration 2027<span class="star">*</span>
+        </span>
+
+      </a>
+
     </div>
+
   </section>
+
+
+  <!-- FEATURES SECTION -->
 
   <section class="container">
+
     <div class="features">
+
       <div class="feature">
+
         <i class="fas fa-book"></i>
+
         <h3>Quality Education</h3>
-        <p>Guided by skilled educators, our students excel in academics and critical thinking.</p>
+
+        <p>
+          Guided by skilled educators, our students excel in academics and critical thinking.
+        </p>
+
       </div>
+
+
       <div class="feature">
+
         <i class="fas fa-users"></i>
+
         <h3>Holistic Growth</h3>
-        <p>We nurture every child's intellectual, emotional, and social development.</p>
+
+        <p>
+          We nurture every child's intellectual, emotional, and social development.
+        </p>
+
       </div>
+
+
       <div class="feature">
+
         <i class="fas fa-laptop-house"></i>
+
         <h3>Modern Infrastructure</h3>
-        <p>Smart classrooms, computer labs, science labs, and a peaceful environment await you.</p>
+
+        <p>
+          Smart classrooms, computer labs, science labs, and a peaceful environment await you.
+        </p>
+
       </div>
+
     </div>
+
   </section>
 
-  <section class="contact-section">
-    <h2>Contact Us</h2>
-    <p><strong>Location:</strong> Chandilora, Tangmarg, Baramulla, Jammu & Kashmir</p>
+
+  <!-- LOCATION SECTION -->
+
+  <section class="container location-section">
+
+    <p>
+      <strong><i class="fas fa-map-marker-alt"></i> Location:</strong>
+      Chandilora, Tangmarg, Baramulla, Jammu & Kashmir - 193402
+    </p>
+
   </section>
 
-  <section class="container" style="margin-top: 40px;">
+
+  <!-- PRIVACY POLICY -->
+
+  <section class="container privacy-section">
+
     <h2>Privacy Policy</h2>
-    <p>We at Fazil Kashmiri Memorial Govt. Higher Secondary School Chandilora respect your privacy. This policy outlines how we collect, use, and safeguard your information.</p>
+
+    <p>
+      We at Fazil Kashmiri Memorial Government Higher Secondary School Chandilora respect your privacy. This policy outlines how we collect, use, and safeguard your information.
+    </p>
+
     <ul>
-      <li><strong>Data Collection:</strong> We collect personal data (name, contact info, etc.) solely for admission and academic purposes.</li>
-      <li><strong>Usage:</strong> The data is used to process registrations, provide updates, and contact you if needed.</li>
-      <li><strong>Security:</strong> All data is securely stored and not shared with third parties.</li>
+
+      <li>
+        <strong>Data Collection:</strong>
+        We collect personal data (name, contact info, etc.) solely for admission and academic purposes.
+      </li>
+
+      <li>
+        <strong>Usage:</strong>
+        The data is used to process registrations, provide updates, and contact you if needed.
+      </li>
+
+      <li>
+        <strong>Security:</strong>
+        All data is securely stored and not shared with third parties.
+      </li>
+
     </ul>
+
   </section>
+
+
+  <!-- FOOTER -->
 
   <footer>
-    &copy; 2027 Fazil Kashmiri Memorial Govt. Higher Secondary School Chandilora Tangmarg. All rights reserved.
+
+    &copy; 2027 Fazil Kashmiri Memorial Government Higher Secondary School Chandilora Tangmarg. All rights reserved.
+
   </footer>
 
 </body>
